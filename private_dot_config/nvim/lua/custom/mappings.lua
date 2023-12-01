@@ -6,6 +6,9 @@ M.general = {
     ["<leader>wsr"] = {"<cmd> cd ~ <CR>"},
    }
 }
+
+
+
 M.dap = {
   plugin = true,
   n = {

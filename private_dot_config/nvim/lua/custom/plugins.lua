@@ -6,7 +6,7 @@ local plugins = {
     ft = "python",
     dependencies = {
       "mfussenegger/nvim-dap",
-      "rcarriga/nvim-dap"
+      "rcarriga/nvim-dap-ui"
     },
     config = function (_, opts)
       local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
@@ -129,6 +129,6 @@ local plugins = {
       table.insert(M.sources, {name = "crates"})
       return M
     end,
-  }
+  },
 }
 return plugins

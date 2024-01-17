@@ -99,3 +99,6 @@ source $HOME/.zshenv
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export FLYCTL_INSTALL="/home/kaki/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

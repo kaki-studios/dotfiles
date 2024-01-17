@@ -2,6 +2,13 @@ local cmp = require "cmp"
 
 local plugins = {
   {
+    "kelly-lin/ranger.nvim",
+    lazy = false,
+    config = function()
+      return require("custom.configs.ranger")
+    end,
+  },
+  {
     "mfussenegger/nvim-dap-python",
     ft = "python",
     dependencies = {

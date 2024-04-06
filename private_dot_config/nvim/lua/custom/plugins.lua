@@ -44,7 +44,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"python"},
+    ft = {"python", "go"},
     opts = function ()
       return require "custom.configs.null-ls"
     end,
@@ -59,6 +59,7 @@ local plugins = {
         "mypy",
         "ruff",
         "pyright",
+        "gopls",
       },
     },
   },
@@ -85,6 +86,38 @@ local plugins = {
     init = function()
       require("core.utils").load_mappings("dap")
     end
+  },
+  {
+    "dreamsofcode-io/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+      require("core.utils").load_mappings("dap_go")
+    end
+  },
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    },
+    config = function (_, _opts)
+      require("gopher").setup {
+        commands = {
+            go = "go",
+            gomodifytags = "gomodifytags",
+            gotests = "~/go/bin/gotests", -- also you can set custom command path
+            impl = "impl",
+            iferr = "iferr",
+          },
+      }
+      require("core.utils").load_mappings("gopher")
+    end,
+    build = function ()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
   },
   {
     'saecki/crates.nvim',

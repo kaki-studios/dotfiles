@@ -2,6 +2,9 @@ local cmp = require "cmp"
 
 local plugins = {
   {
+    "nvim-neotest/nvim-nio"
+  },
+  {
     "kelly-lin/ranger.nvim",
     lazy = false,
     config = function()
@@ -23,6 +26,7 @@ local plugins = {
   },
   {
     "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function ()
       local dap = require("dap")
@@ -44,6 +48,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
+    event = "VeryLazy",
     ft = {"python", "go"},
     opts = function ()
       return require "custom.configs.null-ls"
@@ -60,7 +65,21 @@ local plugins = {
         "ruff",
         "pyright",
         "gopls",
+        "clangd",
+        "clang-format",
+        "codelldb",
       },
+    },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
     },
   },
   {
@@ -83,7 +102,10 @@ local plugins = {
   },
   {
     "mfussenegger/nvim-dap",
-    init = function()
+    -- init = function()
+    --   require("core.utils").load_mappings("dap")
+    -- end
+    config = function(_, _)
       require("core.utils").load_mappings("dap")
     end
   },

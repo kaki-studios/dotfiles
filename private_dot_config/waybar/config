@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 60,
+    "height": 40,
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["clock"],
     "modules-right": ["hyprland/language", "cava", "pulseaudio"],
@@ -53,7 +53,9 @@
       }
     },
     "clock": {
-      "format": "<span color='#b4befe'> </span>{:%H:%M}",
+      //"format": "<span color='#b4befe'> </span>{:%H:%M}",
+      "format": "{:%H:%M}",
+      
     },
     "pulseaudio": {
       "format": "<span color='#b4befe'>{icon} </span>{volume}%",

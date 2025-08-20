@@ -3,7 +3,7 @@
     "height": 40,
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/language", "cava", "pulseaudio"],
+    "modules-right": ["hyprland/language", "cava", "battery", "pulseaudio"],
 
     "cava": {
       //"cava_config": "/home/kaki/.config/cava/config",
@@ -24,6 +24,18 @@
       "input_delay": 2,
       "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
       
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄"
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "max-length": 25
     },
     "hyprland/language": {
       "keyboard-name": "dpb-ferris-sweep",

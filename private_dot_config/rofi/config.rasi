@@ -82,7 +82,7 @@ inputbar {
     background-color: @background-active;
     text-color: @foreground;
     expand: false;
-    border-radius: 9px;
+    // border-radius: 9px;
     position: north;
     children: [ entry-wrapper ];
 }

@@ -1,6 +1,6 @@
 [global]
 format = "<b>%s</b>\n%b"
-
+timeout = 2
 icon_path = "~/.local/share/icons/"
 icon_theme = WhiteSur
 max_icon_size = 64

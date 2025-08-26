@@ -111,3 +111,6 @@ export QT_QPA_PLATFORM=wayland
 # Created by `pipx` on 2024-02-11 07:55:40
 export PATH="$PATH:/home/kaki/Documents/dotfiles/bin/bin"
 export PATH=~/.npm-global/bin:$PATH
+
+# Created by `pipx` on 2025-08-26 15:21:22
+export PATH="$PATH:/home/kaarlo/.local/bin"

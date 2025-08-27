@@ -29,7 +29,7 @@ else
 		reboot="󰜉 Restart"
 		lock="󰍁 Lock"
 		suspend="󰒲 Sleep"
-		logout=" Logout"
+		logout="󰍃 Logout"
 	fi
 	ddir="$HOME/.config/rofi/config"
 fi

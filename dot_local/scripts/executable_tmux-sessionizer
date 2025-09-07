@@ -4,7 +4,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     #here im wildcarding inside rust_projects because the actual projects are 2 directories deep
-    selected=$(find ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Projects/* -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

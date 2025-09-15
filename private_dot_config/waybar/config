@@ -24,7 +24,7 @@
         "max-length": 25
     },
     "hyprland/language": {
-      "keyboard-name": "dpb-ferris-sweep",
+      "keyboard-name": "at-translated-set-2-keyboard",
     },
     "power-profiles-daemon": {
       "format": "<span color='#b4befe'>{icon}</span>",

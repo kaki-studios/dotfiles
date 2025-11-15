@@ -3,12 +3,26 @@
     "height": 40,
     "modules-left": ["hyprland/workspaces", "mpris"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/language", "power-profiles-daemon", "backlight", "battery", "pulseaudio"],
+    "modules-right": ["hyprland/language", "power-profiles-daemon", "network", "bluetooth", "backlight", "battery", "pulseaudio"],
 
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% <span color='#b4befe'>{icon}</span>",
-        "format-icons": ["󰃠"]
+        "format-icons": ["󰃠"],
+        "scroll-step": 0.5,
+        "reverse-scrolling": true,
+        "tooltip": false,
+    },
+
+    "bluetooth": {
+      "format": "<span color='#b4befe'>󰂯</span>",
+      "format-on": "<span color='#b4befe'>󰂲</span>",
+      "format-disabled": "<span color='#b4befe'>󰂲</span>",
+      "format-connected": "<span color='#b4befe'>󰂯</span>",
+      "tooltip-format": "{controller_alias} {status}",
+      "tooltip-format-on": "{controller_alias} {status}\nNo devices connected",
+      "tooltip-format-connected": "{device_alias} {status}",
+      "tooltip-format-disconnected": "{status}",
     },
 
     "battery": {
@@ -38,9 +52,24 @@
       }
     },
 
+    "network": {
+      "format": "{ifname}",
+      "format-wifi": "<span color='#b4befe'>󰖩</span>",
+      "format-ethernet": "<span color='#b4befe'>󰈀</span>",
+      "format-disconnected": "<span color='#b4befe'>󰖪</span>",
+      "format-disabled": "<span color='#b4befe'>󰖪</span>",
+      "tooltip": true,
+      "tooltip-format": "{ipaddr}",
+      "tooltip-format-wifi": "{essid} {signalStrength}%",
+      "tooltip-format-ethernet": "{ifname} {ipaddr}",
+      "tooltip-format-disconnected": "Disconnected",
+      "tooltip-format-disabled": "Disabled",
+    },
+
 
     "mpris": {
       "dynamic-order": ["title", "artist", "position", "length"],
+      "interal": 1,
       "dynamic-len": 60,
 
       "dynamic-importance-order": ["title", "position", "length", "artist"],
